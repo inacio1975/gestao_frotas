@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\View;
 class InfoUserController extends Controller
 {
 
+    public function index(){
+        $usuarios = User::get();
+        $title = 'Utilizadores';
+        return view('laravel-examples/user-management', compact('title', 'usuarios'));
+    }
+
     public function create()
     {
         return view('laravel-examples/user-profile');
@@ -31,17 +37,17 @@ class InfoUserController extends Controller
             if(env('IS_DEMO') && Auth::user()->id == 1)
             {
                 return redirect()->back()->withErrors(['msg2' => 'You are in a demo version, you can\'t change the email address.']);
-                
+
             }
-            
+
         }
         else{
             $attribute = request()->validate([
                 'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
             ]);
         }
-        
-        
+
+
         User::where('id',Auth::user()->id)
         ->update([
             'name'    => $attributes['name'],

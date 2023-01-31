@@ -15,7 +15,7 @@
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item d-flex align-items-center">
                     <a href="{{ url('/logout') }}" class="nav-link text-body font-weight-bold px-0">
-                        <i class="fa fa-user me-sm-1"></i>
+                        <i class="fa fa-power-off me-sm-1"></i>
                         <span class="d-sm-inline d-none">Sair</span>
                     </a>
                 </li>

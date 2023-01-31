@@ -41,9 +41,10 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('rtl');
 	})->name('rtl');
 
-	Route::get('user-management', function () {
-		return view('laravel-examples/user-management');
-	})->name('user-management');
+	// Route::get('user-management', function () {
+	// 	return view('laravel-examples/user-management');
+	// })->name('user-management');
+    Route::get('user-management', [InfoUserController::class, 'index']);
 
 	Route::get('tables', function () {
 		return view('tables');
@@ -64,6 +65,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
+	Route::post('/edit-users', [InfoUserController::class, 'update'])->name('edit-users');
+	Route::post('/destroy-users', [InfoUserController::class, 'update'])->name('destroy-users');
     Route::get('/login', function () {
 		return view('dashboard');
 	})->name('sign-up');
