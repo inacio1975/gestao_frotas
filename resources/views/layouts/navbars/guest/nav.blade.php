@@ -27,7 +27,7 @@
             </a>
             </li>
         @endif
-        <li class="nav-item">
+        <li class="nav-item" style="display: none">
           <a class="nav-link me-2" href="{{ auth()->user() ? url('static-sign-up') : url('register') }}">
             <i class="fas fa-user-circle opacity-6 me-1 {{ (Request::is('static-sign-up') ? '' : 'text-dark') }}"></i>
             Registro

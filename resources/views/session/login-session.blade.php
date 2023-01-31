@@ -11,9 +11,9 @@
               <div class="card card-plain mt-8">
                 <div class="card-header pb-0 text-left bg-transparent">
                   <h3 class="font-weight-bolder text-info text-gradient">Bem-vindo de volta</h3>
-                  <p class="mb-0">Crie uma nova conta<br></p>
+                  <p class="mb-0">Acesse a sua conta<br></p>
                   <p class="mb-0">OU Entre usando as seguintes credenciais:</p>
-                  <p class="mb-0">Email <b>admin@softui.com</b></p>
+                  <p class="mb-0">Email <b>admin@srm.co.ao</b></p>
                   <p class="mb-0">Password <b>secret</b></p>
                 </div>
                 <div class="card-body">
@@ -21,7 +21,7 @@
                     @csrf
                     <label>Email</label>
                     <div class="mb-3">
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="admin@softui.com" aria-label="Email" aria-describedby="email-addon">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="admin@srm.co.ao" aria-label="Email" aria-describedby="email-addon">
                       @error('email')
                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                       @enderror
@@ -46,7 +46,7 @@
                 <small class="text-muted">Esqueceu a password? Faça Reset
                   <a href="/login/forgot-password" class="text-info text-gradient font-weight-bold">aqui</a>
                 </small>
-                  <p class="mb-4 text-sm mx-auto">
+                  <p class="mb-4 text-sm mx-auto" style="display: none">
                     Não tem uma conta?
                     <a href="register" class="text-info text-gradient font-weight-bold">Registre-se</a>
                   </p>

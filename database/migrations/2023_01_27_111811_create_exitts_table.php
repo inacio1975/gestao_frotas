@@ -4,11 +4,11 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExit_sTable extends Migration
+class CreateExittsTable extends Migration
 {
     public function up()
     {
-        Schema::create('exit_s', function (Blueprint $table) {
+        Schema::create('exitts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('vehicle_id');
             $table->date('date');
@@ -20,6 +20,6 @@ class CreateExit_sTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('exit_s');
+        Schema::dropIfExists('exitts');
     }
 }

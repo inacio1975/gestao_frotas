@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Exit_ extends Model
+class Exitt extends Model
 {
-    protected $table = 'exits';
+    protected $table = 'exitts';
     protected $fillable = ['vehicle_id', 'reason', 'date'];
 
     public function vehicle()
