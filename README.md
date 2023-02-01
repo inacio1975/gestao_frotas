@@ -30,20 +30,22 @@ O diagrama de entidade-relação (DER) para um sistema de gestão de frotas pode
 
 ## Entidades
 
-• Veículos: representa cada veículo na frota, com atributos como marca, modelo, ano, número de série e data de aquisição.
-• Funcionários: representa cada funcionário da empresa, com atributos como nome, cargo e data de contratação.
-• Manutenções e Reparações: representa cada manutenção ou reparação realizada em um veículo, com atributos como data, custo e tipo de trabalho.
-• Usuários: representa cada usuário do sistema, com atributos como nome, cargo e data de cadastro.
+1. Veículos: representa cada veículo na frota, com atributos como marca, modelo, ano, número de série e data de aquisição.
+2. Funcionários: representa cada funcionário da empresa, com atributos como nome, cargo e data de contratação.
+3. Manutenções e Reparações: representa cada manutenção ou reparação realizada em um veículo, com atributos como data, custo e tipo de trabalho.
+4. Usuários: representa cada usuário do sistema, com atributos como nome, cargo e data de cadastro.
 
 ## Relações:
-• Veículos tem um Funcionário: representa a relação entre um veículo e o funcionário atualmente atribuído a ele.
-• Veículos tem várias Manutenções e Reparações: representa a relação entre um veículo e as manutenções e reparações realizadas nele.
-• Funcionários tem vários Veículos: representa a relação entre um funcionário e os veículos atribuídos a ele.
-• Usuários tem um Funcionário: representa a relação entre um usuário do sistema e o funcionário que ele representa.
+1. Veículos tem um Funcionário: representa a relação entre um veículo e o funcionário atualmente atribuído a ele.
+2. Veículos tem várias Manutenções e Reparações: representa a relação entre um veículo e as manutenções e reparações realizadas nele.
+3. Funcionários tem vários Veículos: representa a relação entre um funcionário e os veículos atribuídos a ele.
+4. Usuários tem um Funcionário: representa a relação entre um usuário do sistema e o funcionário que ele representa.
 
 ![Diagrama ER](public/assets/img/der2.png?raw=true "Diagrama ER")
 
 Este é um exemplo de como poderia ser o DER para esse sistema, poderia haver outras entidades e relações dependendo das necessidades específicas do negócio. É importante que seja feito uma análise detalhada das necessidades do negócio para garantir que o DER seja o mais preciso e eficiente possível.
+
+# Controlo de Acesso
 
 # Instalação
 
@@ -52,13 +54,13 @@ Este é um exemplo de como poderia ser o DER para esse sistema, poderia haver ou
 1. Clone the Repository
 
 ```
-git clone https://github.com/inacio1975/farmacia_sol.git
+git clone https://github.com/inacio1975/gestao_frotas.git
 ```
 
 2. Navegue para a pasta do Projecto
 
 ```
-cd farmacia_sol_3  [Sem esquecer de usar o nome da pasta onde estiverem os ficheiros]
+cd path/to/project  [Sem esquecer de usar o nome da pasta onde estiverem os ficheiros]
 ```
 
 3. Instalar packages com composer
@@ -108,7 +110,7 @@ DB_PASSWORD=
 Utilize o seguinte comando para as executar
 
 ```
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 ```
 
 1. Inicie o servidor local e navegue para a sua aplicação.
@@ -129,93 +131,13 @@ http://127.0.0.1:8000
 # Credenciais do Admin
 
 ```
- email: admin@admin.com
- senha: admin
+ email: admin@srm.co.ao
+ senha: secret
 ```
 
-Tema utilizado: <https://themeforest.net/item/doccure-doctor-appointment-booking-system-bootstrap-angular-template/28201296>
+Tema utilizado: <https://www.creative-tim.com/product/soft-ui-dashboard>
 
-# Usage
 
-- Perfil =>
- Cada usuário tem um perfil próprio.
- Você pode atualizar suas credenciais de perfil nesta página clicando no botão editar.
- Você também pode alterar sua senha clicando na guia segurança
- e escolhendo sua nova senha. Certifique-se também de digitar sua senha antiga corretamente
-
-- Usuários =>
- lista de todos os usuários do sistema.
- Você pode adicionar um novo usuário clicando no botão adicionar usuário na página de usuários.
- Você também pode editar os detalhes do usuário clicando no botão editar na página de usuários.
- Você pode excluir facilmente um usuário clicando no botão excluir.
- Você pode exportar ou imprimir todos os dados do usuário clicando no botão de exportação de dados.
-
-- Controle de Acesso =>
- As funções e permissões do usuário estão aqui.
- Cada usuário no sistema tem uma função e cada função tem um certo número de permissões no sistema.
- Você pode criar novas funções e escolher suas permissões.
- Clique no botão adicionar função e escreva o nome da função e escolha o número de permissões que você deseja.
- você pode editar ou excluir funções clicando no botão editar ou no botão excluir.
-
-- Proveedores =>
- A página de fornecedores tem uma lista de todos os seus fornecedores de produtos.
- Você pode adicionar novos fornecedores clicando no botão adicionar fornecedor na página ou na barra lateral.
- Você também pode editar os detalhes do fornecedor clicando no botão editar na página de fornecedores.
- Você também pode excluir clicando no botão excluir.
-
-- Vendas =>
- A página de vendas tem uma lista de todas as vendas que já foram feitas no sistema.
- Você pode adicionar vendas clicando no botão de vendas na página de vendas.
- Você também pode excluir vendas clicando no botão excluir (Necessário?).
- Você pode exportar ou imprimir os dados de vendas clicando no menu suspenso de exportação de dados na parte superior da lista
- e escolhendo a opção desejada.
-
-- Compras =>
- A página Compras contém todas as suas compras de produtos. Esta é a parte principal do
- seus produtos de aplicação.
- você pode adicionar compras clicando no botão adicionar novo na página de compras ou clicando no botão adicionar compra
- na barra lateral. Depois disso, preencha os dados e envie o formulário.
- Você pode editar as compras clicando no botão editar na página de compras.
- Você também pode excluir a compra clicando no botão excluir na página de compras.
- Você também pode exportar ou imprimir os dados de compras clicando no menu suspenso de exportação de dados E escolha sua opção.
-
-- Productos =>
- A página de produtos contém todos os produtos que você está vendendo.
- Você pode adicionar produto clicando no botão adicionar produto na barra lateral ou adicionar novo botão na página de produtos.
-
- Você pode editar os detalhes do produto clicando no botão editar na página de produtos
- Ou você também pode excluir o produto clicando no botão excluir na página de produtos.
-
-- Fora de Stock =>
-   Esta página contém todos os produtos que estão fora de estoque. Ou seja, quando a quantidade de um produto comprado é zero e não é atualizada,
- É referido como produto esgotado.
- Você não precisa adicionar ou excluir produtos esgotados.
- O sistema reconhece automaticamente os produtos em falta e os coloca lá
- Você também exporta ou imprime também.
-
- ->Expired =>Esta página contém todos os produtos que expiraram. São produtos cuja data de validade chegou.
-O sistema os reconhece automaticamente e os coloca lá para que você não precise adicioná-los você mesmo.
-
-- Categorias =>
- A página de categorias contém as categorias de seus produtos.
- Você pode adicionar categoria de produto clicando no botão adicionar categoria na página de categorias.
- Você também pode editar clicando no botão editar na página de categorias.
- Você pode excluir categorias clicando no botão excluir.
-
-# Como adicionar produto e vendê-lo
-
-1. Primeiro adicione a categoria do produto
-
-2. Adicione o fornecedor do produto
-
-3. Faça uma compra do produto adicionando compra.
-
-4. Após a compra, adicione o produto aos seus produtos.
-
-5. Você pode começar a vender o produto.
-
-6. Ao ser notificado do estoque, basta atualizar a quantidade do produto adquirido.
-Ou faça uma nova compra.
 
 ![ScreenShot](screenshots/login.png?raw=true "Página de Login")
 
