@@ -2,10 +2,35 @@
 
 @section('content')
     <div>
+        <div class="container-fluid">
+            <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
+              <span class="mask bg-gradient-primary opacity-6"></span>
+            </div>
+            <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
+              <div class="row gx-4">
+                <div class="col-auto">
+                  <div class="avatar avatar-xl position-relative">
+                    <img src="/storage/users/{{ $user->avatar }}" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                  </div>
+                </div>
+                <div class="col-auto my-auto">
+                  <div class="h-100">
+                    <h5 class="mb-1">
+                      {{ $user->name }}
+                    </h5>
+                    <p class="mb-0 font-weight-bold text-sm">
+                      {{ $user->getRoleNames()[0] }}
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
         <div class="container-fluid py-4">
             <div class="card">
                 <div class="card-header pb-0 px-3">
-                    <h6 class="mb-0">{{ __('Novo  Utilizador') }}</h6>
+                    <h6 class="mb-0">{{ __('Editar  Utilizador') }}</h6>
                 </div>
                 <div class="card-body pt-4 p-3">
                     <form action="{{ route('store.user') }}" enctype="multipart/form-data" method="POST" role="form text-left">
@@ -35,7 +60,7 @@
                                     <label for="user-name" class="form-control-label">{{ __('Nome') }}</label>
                                     <div class="@error('user.name')border border-danger rounded-3 @enderror">
                                         <input class="form-control" type="text"
-                                            placeholder="Name" id="user-name" name="name">
+                                            placeholder="Name" id="user-name" name="name" value="{{ $user->name }}" />
                                         @error('name')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
@@ -47,7 +72,7 @@
                                     <label for="user-email" class="form-control-label">{{ __('Email') }}</label>
                                     <div class="@error('email')border border-danger rounded-3 @enderror">
                                         <input class="form-control" type="email"
-                                            placeholder="@example.com" id="user-email" name="email">
+                                            placeholder="@example.com" id="user-email" name="email" value="{{ $user->email }}" />
                                         @error('email')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
@@ -77,7 +102,7 @@
                                     <label for="user.avatar" class="form-control-label">{{ __('Avatar') }}</label>
                                     <div class="@error('user.avatar') border border-danger rounded-3 @enderror">
                                         <input class="form-control" type="file" placeholder="avatar" id="avatar"
-                                            name="avatar">
+                                            name="avatar" value="{{ $user->avatar }}" />
                                     </div>
                                 </div>
                             </div>

@@ -63,10 +63,11 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('sign-up');
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
-	Route::get('/register', [RegisterController::class, 'create']);
+	Route::get('/register', [InfoUserController::class, 'create'])->name('create-user');
+	Route::get('/edit-user/{id}', [InfoUserController::class, 'edit'])->name('edit.user');
     Route::get('/user-profile', [InfoUserController::class, 'create']);
-	Route::post('/user-profile', [InfoUserController::class, 'store']);
-	Route::post('/edit-users', [InfoUserController::class, 'update'])->name('edit-users');
+	Route::post('/user-profile', [InfoUserController::class, 'store'])->name('store.user');
+	Route::post('/update-users', [InfoUserController::class, 'update'])->name('update.user');
 	Route::post('/destroy-users', [InfoUserController::class, 'update'])->name('destroy-users');
     Route::get('/login', function () {
 		return view('dashboard');

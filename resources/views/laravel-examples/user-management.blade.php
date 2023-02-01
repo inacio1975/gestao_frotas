@@ -10,7 +10,7 @@
                             <div>
                                 <h5 class="mb-0">Usuários</h5>
                             </div>
-                            <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Novo
+                            <a href="{{ route('create-user') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Novo
                                 Usuário</a>
                         </div>
                     </div>
@@ -49,15 +49,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
                                         @foreach ($usuarios as $index=>$item)
+                                        <tr>
                                             <td class="ps-4">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $index+1 }}</p>
                                             </td>
                                             <td>
                                                 @if ($item->avatar)
                                                 <div>
-                                                    <img src="{{ $item->avatar }}" class="avatar avatar-sm me-3">
+                                                    <img src="storage/users/{{ $item->avatar }}" class="avatar avatar-sm me-3">
                                                 </div>
                                                 @else
                                                 <div>
@@ -79,7 +79,7 @@
                                             </td>
                                             <td class="text-center">
                                                 @can('edit-usuario')
-                                                <a href="{{ route('edit-users', $item->id) }}" class="mx-3" data-bs-toggle="tooltip"
+                                                <a href="{{ route('edit.user', $item->id) }}" class="mx-3" data-bs-toggle="tooltip"
                                                     data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
@@ -90,8 +90,8 @@
                                                 </span>
                                                 @endcan
                                             </td>
+                                        </tr>
                                         @endforeach
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
