@@ -137,13 +137,11 @@ http://127.0.0.1:8000
 
 Tema utilizado: <https://www.creative-tim.com/product/soft-ui-dashboard>
 
+![ScreenShot](public/assets/img/screenshots/login.jpeg?raw=true "Página de Login")
 
+![Dashboard](public/assets/img/screenshots/dashboard.jpeg?raw=true "Dashboard")
 
-![ScreenShot](screenshots/login.png?raw=true "Página de Login")
-
-![Dashboard](screenshots/dashboard.png?raw=true "Dashboard")
-
-![Profile](screenshots/user-profile.png?raw=true "Perfil do Usuário")
+![Profile](public/assets/img/screenshots/utilizadores.jpeg?raw=true "Lista de Utilizadores no sistema")
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
