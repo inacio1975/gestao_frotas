@@ -41,6 +41,7 @@
             <span class="nav-link-text ms-1">Meu Perfil</span>
         </a>
       </li>
+      @can('list-usuarios')
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('user-management') ? 'active' : '') }}" href="{{ url('user-management') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -49,6 +50,7 @@
             <span class="nav-link-text ms-1">Utilizadores</span>
         </a>
       </li>
+      @endcan
       <li class="nav-item pb-2">
         <a class="nav-link {{ (Request::is('roles') ? 'active' : '') }}" href="{{ url('roles') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">

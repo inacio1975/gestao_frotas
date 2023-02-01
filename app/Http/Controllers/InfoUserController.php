@@ -55,11 +55,50 @@ class InfoUserController extends Controller
             'email' => $request->email,
             'position' => $request->position,
             'avatar' => $imageName,
-            'password' => Hash::make($request->$defaultPassword),
+            'password' => Hash::make($defaultPassword),
         ]);
 
         $user->assignRole($request->position);
 
         return redirect('user-management')->with('success','Usuario adicionado, password é: '. $defaultPassword);
+    }
+
+        /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \app\Models\User $user
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, User $user){
+        $attributes = request()->validate([
+            'name' => ['required', 'max:50'],
+            'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
+            'position'     => ['required'],
+            'avatar' => 'nullable|file|image|mimes:jpg,jpeg,gif,png',
+        ]);
+
+        $imageName = $user->avatar;
+        $password = $user->password;
+
+        if ($request->hasFile('avatar')) {
+            $imageName = time() . '.' . $request->avatar->extension();
+            $request->avatar->move(public_path('storage/users'), $imageName);
+        }
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'position' => $request->position,
+            'avatar' => $imageName,
+        ]);
+
+        foreach ($user->getRoleNames() as $userRole) {
+            $user->removeRole($userRole);
+        }
+
+        $user->assignRole($request->position);
+
+        return redirect('user-management')->with('success','Usuario actualizado');
     }
 }

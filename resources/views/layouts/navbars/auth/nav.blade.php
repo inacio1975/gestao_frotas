@@ -52,7 +52,7 @@
                                         </h6>
                                         <p class="text-xs text-secondary mb-0">
                                             <i class="fa fa-clock me-1"></i>
-                                            13 minutes ago
+                                            há 13 minutos
                                         </p>
                                     </div>
                                 </div>

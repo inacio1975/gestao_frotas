@@ -45,7 +45,20 @@ O diagrama de entidade-relação (DER) para um sistema de gestão de frotas pode
 
 Este é um exemplo de como poderia ser o DER para esse sistema, poderia haver outras entidades e relações dependendo das necessidades específicas do negócio. É importante que seja feito uma análise detalhada das necessidades do negócio para garantir que o DER seja o mais preciso e eficiente possível.
 
-# Controlo de Acesso
+# Controlo de Acesso (Restrições nas opções do Menu)
+## Roles
+Os roles, definido como sendo igual o tipo de usuario (Grupos de usuários) ajudam a limitar as opções disponíveis para cada grupo.
+
+Assim, é possível limitar as opções disponíveis para o utilizador em função do grupo a que pertence.
+
+## Permissões (Permissions)
+As permissões determinam o que se pode fazer pou não na aplicação. Cada role é definido por um conjunto de permissões.
+Se um utilizador lhe é assignado um role, esse utilizador passa ter as permissões deste role (e dessa forma, as opções do menu muda para este utilizador).
+
+Este sistema é implementado na base de dados usando as tabelas (Entidades) 
+ - roles
+ - permissions
+ - role_has_permissions
 
 # Instalação
 
